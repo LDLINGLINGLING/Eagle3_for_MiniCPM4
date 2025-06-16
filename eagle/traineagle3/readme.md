@@ -5,7 +5,7 @@
 ## 🎯 项目简介
 
 EAGLE（Extrapolation Algorithm for Greater Language-model Efficiency）是一种创新的推测解码方法，通过训练轻量级的草稿模型来预测目标模型的下一个token，从而显著提升大语言模型的推理速度。
-本项目为MiniCPM4适配EAGLE3的投机解码模型。
+
 ### 核心思想
 - 🎯 **推测解码**：使用小模型预测大模型的输出，减少推理延迟
 - 🔄 **多步预测**：一次性预测多个token，提高并行度
