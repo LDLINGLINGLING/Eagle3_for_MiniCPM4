@@ -61,8 +61,10 @@ export WANDB_API_KEY="your_wandb_api_key"
 {
   "id": "unique_id",
   "conversations": [
-    {"from": "human", "value": "用户问题"},
-    {"from": "gpt", "value": "助手回答"}
+    {"from": "human", "value": "用户问题1"},
+    {"from": "gpt", "value": "助手回答2"},
+    {"from": "human", "value": "用户问题1"},
+    {"from": "gpt", "value": "助手回答2"}
   ]
 }
 ```
