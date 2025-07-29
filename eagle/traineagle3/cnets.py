@@ -709,9 +709,11 @@ class Model(nn.Module):
     def dataprepare(self, input_ids, attention_mask, loss_mask):
         device = input_ids.device
         outs = self.target_model(input_ids=input_ids, attention_mask=attention_mask)
-        hidden_states0 = outs.hidden_states[0]
-        hidden_states1 = outs.hidden_states[1]
-        hidden_states2 = outs.hidden_states[2]
+        len_hidden_states = len(outs.hidden_states)
+        mid_index = len_hidden_states // 2
+        hidden_states0 = outs.hidden_states[2]
+        hidden_states1 = outs.hidden_states[mid_index]
+        hidden_states2 = outs.hidden_states[-3]
         hidden_states = torch.cat((hidden_states0, hidden_states1, hidden_states2), dim=-1)
         target = outs.logits
         target = padding(target, left=False)
